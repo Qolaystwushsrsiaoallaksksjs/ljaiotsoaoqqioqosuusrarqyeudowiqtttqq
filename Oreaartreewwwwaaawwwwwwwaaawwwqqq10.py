@@ -72,13 +72,3 @@ except (requests.RequestException, ValueError) as e:
     print(f"[Lỗi khi tải hoặc thực thi mã nguồn: {e}]")
     sys.exit()
 
-# In thông tin vị trí và thời tiết
-city, region, country, latitude, longitude = get_location_by_ip()
-if latitude and longitude:
-    weather_description = get_weather(latitude, longitude)
-
-    print(f"Vị trí: {city}, {region}, {country}")
-    print(f"Tọa độ: Latitude {latitude}, Longitude {longitude}")
-    print(f"Thời tiết hiện tại: {weather_description}")
-else:
-    print("Không thể lấy thông tin vị trí.")
